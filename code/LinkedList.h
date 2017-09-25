@@ -1,5 +1,8 @@
 // LinkedList.h
 
+//Hayden Moritz
+//COSC 2030 - Lab02
+
 // tom bailey   0740  5 oct 2010
 // Declaration of the List class.
 
@@ -15,7 +18,7 @@
 #include <iostream>
 using std::ostream;
 
-#include "Node.cpp"
+#include "Node.h"
 
 #define ulong unsigned long
 
@@ -65,6 +68,15 @@ public:
 	// post: the first double in this List has been removed
 	//         from this List and has been returned.
 	double removeFirst();
+
+	//A size method to report the size of a LLList
+	double size();
+
+	//A sum method to report the sum of a LLList
+	double sum();
+
+	//An insertAsLast method to insert a new Node object as the last Node in the linked list
+	void insertAsLast(double x);
 
 private:
 	//*** Inaccessible standard functions ***

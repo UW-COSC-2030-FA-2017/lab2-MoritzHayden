@@ -1,5 +1,8 @@
 // LinkedList.cpp
 
+//Hayden Moritz
+//COSC 2030 - Lab02
+
 // tom bailey   0745  5 oct 2010
 // Definition of methods for the List class.
 
@@ -84,6 +87,49 @@ void List::print(ostream & outfile) const
 	outfile << " ]";
 }
 
+//Size method to return size of a LLList
+double List::size()
+{
+	Node *temp;
+	temp = first_;
+	int length=0;
+	while (temp!=NULL) {
+		length++;
+		temp = temp->next_;
+	}
+	return length;
+}
+
+//A sum method to report the sum of a LLList
+double List::sum()
+{
+	Node *temp;
+	double sum = 0;
+	temp = first_;
+	while (temp != NULL) {
+		sum += temp->entry_;
+		temp = temp->next_;
+	}
+	return sum;
+}
+
+//An insertAsLast method to insert a new Node object as the last Node in the linked list
+void List::insertAsLast(double x)
+{
+	Node *last = first_;
+	last->entry_ = x;
+	last->next_ = NULL;
+	if (first_ == NULL) {
+		first_ = last;
+	}
+	else {
+		Node *temp = first_;
+		while (temp->next_!=NULL) {
+			temp = temp->next_;
+		}
+		temp->next_ = last;
+	}
+}
 
 // Iterative version of clone.
 // This version walks down the linked structure making a
